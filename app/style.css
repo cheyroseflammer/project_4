@@ -17,9 +17,14 @@ h2 {
   padding-bottom: 20px;
 }
 
+p {
+  text-align: center;
+}
+
 img {
   width: 450px;
   padding-right: 30px;
+  padding-bottom: 20px;
 }
 
 .row {
@@ -28,4 +33,25 @@ img {
 
 .column {
   padding-left: 40px;
+}
+
+.card {
+  width: 400px;
+  text-align: center;
+  background-color: #222222;
+  margin: 20px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.cont {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.text {
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: 5px;
 }
