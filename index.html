@@ -29,11 +29,75 @@
     <div class="row">
       <div class="column">
         <img src="Images\dev.svg" alt="developer count chart">
-        <img src="Images\genre.svg" alt="genre count chart">
-        <img src="Images\platform.svg" alt="platform count chart">
         <img src="Images\pub.svg" alt="publisher count chart">
+        <img src="Images\platform.svg" alt="platform count chart">
+        <img src="Images\genre.svg" alt="genre count chart">
       </div>
     </div>
+    <div class="container">
+      <h2>Objective</h2>
+      <br>
+      <p>Our aim for this data analyst project was to predict whether or not a game was a hit or
+        not.</p>
+      <div class="cont">
+        <div class="card">
+          <div class="box">
+            <div class="text">Exploring Data</div>
+            <p>
+              The necessary data was already collected and structured into CSV files on Kaggle. We
+              explored our data using pandas to read our csv into a dataframe and viewed the first 5
+              results using head() to give us an idea of what our data looked like. Investigating
+              the data further we created bar charts to visualize features of interest; comparing
+              game count by platform, developer, publisher, and genre in separate charts. We also
+              explored critic-score by global sales to see what kind of correlation there may be.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="box">
+            <div class="text">Data Wrangling</div>
+            <p>
+              Our data was nicely organized for visualizations but far from perfect for us to plug
+              into our Machine Learning model. Beginning our wrangling process we needed to drop any
+              duplicated rows and null values. Perfect, now that our data was somewhat optimized we
+              wanted to figure out which feature would be useful in defining a game as “hit”. We
+              decided that any game that had a global sales over 10 would return 1 and anything
+              under would return 0 saving those values to a new column called “Hit”.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="box">
+            <div class="text">Modeling Data</div>
+            <p>
+              The first model we tested was the Random Forest which gave us an accuracy score of .84
+              and our second model we tested was the Logistic Regression which gave us a slightly
+              higher accuracy score of .86 which is the percentage of correct predictions. Our
+              precision which is the percentage of positive predictions correct was 0.71. Our
+              sensitivity which is our true positive rate 0.71 as well. Finally, our F1 score, which
+              is the balance between precision and sensitivity, was .92.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="box">
+            <div class="text">Data Preprocessing</div>
+            <p>
+              Since our predicting value was a binary outcome either being 1 a “hit” or 0 a “no hit”
+              we decided to go with Random Forest and Logistic Regression.The features we would be
+              using from our original data frame would be “Name”, “Platform”, “Genre”, “Publisher”,
+              “Year_of_Release”, “Critic_Score” and an additional column we created “Hit”. We then
+              used get_dummies to convert our categorical data into indicator variables and after we
+              split our data into “X” and “y” dataframes to separate our data from our labels.
+              Finally, we used train_test_split to create a .75/.25 split into training and test
+              data.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
 </body>
 
 </html>
