@@ -66,7 +66,7 @@ Our second step in refining included normalizing the data. This was done by impo
 
 ## Considerations
 
-While we could not achieve meaningful predicitive power with either model, we did step away with significant consideration. 
+While we could not achieve meaningful predicitive power with either model, we did step away with significant considerations. 
 
 The first being that perhaps a feature other than global sales may have produced better predictive power. Features such as Critic Score or User Score, that can have a fairly large effect on whether a game is bought or played, and thus considered a "hit."
 
