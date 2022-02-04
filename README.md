@@ -32,9 +32,11 @@ Once outliers were removed, the data was checked to determine the ratio of null 
 
 The data was then checked again to determine the ratio of null values within each column. The ratio of null values within several key variables was assessed once more by replacing null values with either median or mode values. 
 
-Once null values were taken care of, it was time to drop unecessary columns. These columns included: Name, Publisher, Developer, NA_Sales, EU_Sales, JP_Sales, Other_Sales, and Year_of_Release.
+Once null values were taken care of, it was time to drop unnecessary  columns. These columns included: Name, Publisher, Developer, NA_Sales, EU_Sales, JP_Sales, Other_Sales, and Year_of_Release.
 
-With an almost clean dataset, the next step was to define what would be considered a "hit" video game. This was done using a function that defined a video game as a "hit" if the game's global sales were equal to or above 10 million sales. The function then returned either a "1" or a "0" if the game was a "hit" ot not, respectively.
+Now that null values and unnecessary  columns have been removed, categorical values needed to be converted into numerical values. This was done by using pandas get_dummies.
+
+With an almost clean dataset, the last step in involved in preprocessing was to define what would be considered a "hit" video game. This was done using a function that defined a video game as a "hit" if the game's global sales were equal to or above 10 million sales. The function then returned either a "1" or a "0" if the game was a "hit" ot not, respectively.
 
 ---
 
