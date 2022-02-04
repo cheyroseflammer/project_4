@@ -35,60 +35,76 @@
     <div class="container">
       <h2>Objective</h2>
       <br>
-      <p>Our aim for this data analyst project was to predict whether or not a game was a hit or
-        not.</p>
+      <p>This project consisted of building a machine learning model to predict whether or not a video game 
+        would be considered a "hit." </p>
       <div class="cont">
         <div class="card">
           <div class="box">
             <div class="text">Exploring Data</div>
             <p>
-              The necessary data was already collected and structured into CSV files on Kaggle. We
-              explored our data using pandas to read our csv into a dataframe and viewed the first 5
-              results using head() to give us an idea of what our data looked like. Investigating
-              the data further we created bar charts to visualize features of interest; comparing
-              game count by platform, developer, publisher, and genre in separate charts. We also
-              explored critic-score by global sales to see what kind of correlation there may be.
+              Data exploration began by finding a video game sales dataset on Kaggle.com. 
+              We explored the data using pandas to read our csv into a dataframe and viewed the first 5
+              results using head() to give us an idea of what our data looked like. 
+              The dataset included the following features: Name, Platform, Year of Release, Genre, Publisher, 
+              NA Sales, EU Sales, JP Sales, Other Sales, Global Sales, Critic Score, Critic Count, User Score, 
+              User Count, Developer, and Rating
+              Exploration began by creating scatter charts to visualize features of interest; 
+              which included critic score versus global sales. Data exploration cotinued by loading the 
+              data into a Tableau workbook. Once loaded, various graphs were made to determine 
+              relationships between each of the additional features available in the dataset.
             </p>
           </div>
         </div>
         <div class="card">
           <div class="box">
-            <div class="text">Data Wrangling</div>
+            <div class="text">Preprocessing</div>
             <p>
-              Our data was nicely organized for visualizations but far from perfect for us to plug
-              into our Machine Learning model. Beginning our wrangling process we needed to drop any
-              duplicated rows and null values. Perfect, now that our data was somewhat optimized we
-              wanted to figure out which feature would be useful in defining a game as “hit”. We
-              decided that any game that had a global sales over 10 would return 1 and anything
-              under would return 0 saving those values to a new column called “Hit”.
+              Following exploration, the dataset was read into a Jupyter notebook to begin preprocessing.
+              The first step in preprocessing included removing any outliers within the data.
+              Once outliers were removed, the data was checked to determine the ratio of null values within each 
+              column. To reduce the number of null values, the data as whole itself was reduced to reflect only 
+              prominent video game platforms. The data was then checked again to determine the ratio of null values 
+              within each column. 
+              The ratio of null values within several key variables was assessed once more by replacing null 
+              values with either median or mode values. Once null values were taken care of, it was time to drop 
+              unecessary columns. With an almost clean dataset, the next step was to define what 
+              would be considered a "hit" video game. This was done using a function that defined a video game as 
+              a "hit" if the game's global sales were equal to or above 10 million sales. The function then returned 
+              either a "1" or a "0" if the game was a "hit" ot not, respectively.
             </p>
           </div>
         </div>
         <div class="card">
           <div class="box">
-            <div class="text">Modeling Data</div>
+            <div class="text">Building the Models</div>
             <p>
-              The first model we tested was the Random Forest which gave us an accuracy score of .84
-              and our second model we tested was the Logistic Regression which gave us a slightly
-              higher accuracy score of .86 which is the percentage of correct predictions. Our
-              precision which is the percentage of positive predictions correct was 0.71. Our
-              sensitivity which is our true positive rate 0.71 as well. Finally, our F1 score, which
-              is the balance between precision and sensitivity, was .92.
+              With a clean dataset and a video game "hit" defined, it was time to start building our models.
+              This proces began by defining X and Y values and splitting these into training and testng data.
+              The first model ran was a Logistic Regression Model. 
+              This model returned a training score of 0.9918 and a testing score of 0.9918.
+              The second model ran was a Random Forest Classifier model.
+              Thi model returned a training score of 1.0 and a testing score 0.9942.
+              Both models were erroneously overfitting, and so to account this, the data was scaled and 
+              normalized. Additional features were also removed to reduce the noise within the data.
+              Despite steps taken to refine both models, the training and testing scores remained the same.
             </p>
           </div>
         </div>
         <div class="card">
           <div class="box">
-            <div class="text">Data Preprocessing</div>
+            <div class="text">Considerations</div>
             <p>
-              Since our predicting value was a binary outcome either being 1 a “hit” or 0 a “no hit”
-              we decided to go with Random Forest and Logistic Regression.The features we would be
-              using from our original data frame would be “Name”, “Platform”, “Genre”, “Publisher”,
-              “Year_of_Release”, “Critic_Score” and an additional column we created “Hit”. We then
-              used get_dummies to convert our categorical data into indicator variables and after we
-              split our data into “X” and “y” dataframes to separate our data from our labels.
-              Finally, we used train_test_split to create a .75/.25 split into training and test
-              data.
+              While we could not achieve meaningful predicitive power with either model, we did step away 
+              with significant considerations.
+              The first being that perhaps a feature other than global sales may have produced better 
+              predictive power. Features such as Critic Score or User Score, that can have a fairly large 
+              effect on whether a game is bought or played, and thus considered a "hit."
+              The second consideration was that perhaps a third different model would have performed better. 
+              A neural net machine learning model may have been the approach to instead take. We were under 
+              the assumption a simpler model would outperform, however a multilayer network may have better 
+              classified and predicted a game as a "hit."
+              Overall, the process of finding and preparing a dataset to build each machine learning model 
+              was quite the endeavor!
             </p>
           </div>
         </div>
