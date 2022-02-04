@@ -11,3 +11,19 @@ The idea of a "hit" is defined by game's global sales and several other factors 
 The dataset chosen to tackle this project inluded the following features: 
 
 Name, Platform, Year of Release, Genre, Publisher, NA Sales, EU Sales, JP Sales, Other Sales, Global Sales, Critic Score, Critic Count, User Score, User Count, Developer, and Rating
+
+---
+
+## Data Exploration
+
+Exploration began by loading the data into a Tableau workbook. Once loaded, various graphs were made to determine relationships between each of the features available in the dataset.
+
+--- 
+
+## Preprocessing
+
+Following exploration, the dataset was read into a Jupyter notebook to begin preprocessing.
+
+The first step in preprocessing included removing any outliers within the data.
+
+vg_data = vg_data.drop(vg_data[(vg_data['Critic_Score']>60) & (vg_data['Global_Sales']>60)].index)
