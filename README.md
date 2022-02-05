@@ -28,15 +28,15 @@ The first step in preprocessing included removing any outliers within the data u
 
 vg_data = vg_data.drop(vg_data[(vg_data['Critic_Score']>60) & (vg_data['Global_Sales']>60)].index)
 
-Once outliers were removed, the data was checked to determine the ratio of null values within each column. To reduce the number of null values, the data as whole itself was reduced to reflect only prominent video game platforms as there were far too many platforms prior that could be considered noise.
+Once outliers were removed, the data was checked to determine the ratio of null values within each column. To reduce the number of null values, the data as a whole itself was reduced to reflect only prominent video game platforms as there were far too many platforms prior that could be considered noise.
 
 The data was then checked again to determine the ratio of null values within each column. The ratio of null values within several key variables was assessed once more by replacing null values with either median or mode values. 
 
-Once null values were taken care of, it was time to drop unnecessary  columns. These columns included: Name, Publisher, Developer, NA_Sales, EU_Sales, JP_Sales, Other_Sales, and Year_of_Release.
+Once null values were taken care of, it was time to drop unnecessary columns. These columns included: Name, Publisher, Developer, NA_Sales, EU_Sales, JP_Sales, Other_Sales, and Year_of_Release.
 
-Now that null values and unnecessary  columns have been removed, categorical values needed to be converted into numerical values. This was done by using pandas get_dummies.
+Now that null values and unnecessary columns have been removed, categorical values needed to be converted into numerical values. This was done by using pandas get_dummies.
 
-With an almost clean dataset, the last step in involved in preprocessing was to define what would be considered a "hit" video game. This was done using a function that defined a video game as a "hit" if the game's global sales were equal to or above 10 million sales. The function then returned either a "1" or a "0" if the game was a "hit" ot not, respectively.
+With an almost clean dataset, the last step in involved in preprocessing was to define what would be considered a "hit" video game. This was done using a function that defined a video game as a "hit" if the game's global sales were equal to or above 10 million sales. The function then returned either a "1" or a "0" if the game was a "hit" or not, respectively.
 
 ---
 
@@ -54,7 +54,7 @@ Our next step to account for overfitiing involved scaling the data. This was don
 
 ### Random Forest Classifier Model
 
-Because our logisitic regression model seemed to be overfitting, we decided to use a random forest classifier model next. The first step in our random forest classifier model was to imort the RandomForestClassifier from sklearn and train the data. This was also, originally performed on the unscaled data, which returned a training score of 1.0 and a testing score 0.9942. These scores were also erroneously high, leading us to believe once again the model was overfitting. 
+Because our logisitic regression model seemed to be overfitting, we decided to use a random forest classifier model next. The first step in our random forest classifier model was to import the RandomForestClassifier from sklearn and train the data. This was also, originally performed on the unscaled data, which returned a training score of 1.0 and a testing score 0.9942. These scores were also erroneously high, leading us to believe once again the model was overfitting. 
 
 Our next step, to once again, account for overfitting involved sclaing the data. This was done by importing StandardScaler from sklearn and scaling the data to give us both X_train_scaled and X_test_scaled values. The model was then ran once more resulting in training and testing scores of 1.0 and 0.9942 respectively. 
 
