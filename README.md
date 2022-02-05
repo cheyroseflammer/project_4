@@ -48,27 +48,27 @@ This proces began by defining X and Y values and splitting these into training a
 
 ### Logisitic Regression Model
 
-The first step in our logisitic regression model was to import the LogisticRegression model from sklearn and train the data. This was originally performed on the unscaled data, which returned a training score of 0.9918 and a testing score of 0.9918. These scores were erroneously high, leading us to believe the model was overfitting. 
+The first step in our logisitic regression model was to import the LogisticRegression model from sklearn and train the data. This was originally performed on the unscaled data, which returned a training score of 0.9918 and a testing score of 0.9918. 
 
-Our next step to account for overfitiing involved scaling the data. This was done by importing StandardScaler from sklearn and scaling the data to give us both X_train_scaled and X_test_scaled values. The model was then ran once more resulting in very slightly higher training and testing scores of 0.9926 and 0.9942, respectively. 
+Our next step to account for any overfitiing involved scaling the data. This was done by importing StandardScaler from sklearn and scaling the data to give us both X_train_scaled and X_test_scaled values. The model was then ran once more resulting in very slightly higher training and testing scores of 0.9926 and 0.9942, respectively. 
 
 ### Random Forest Classifier Model
 
-Because our logisitic regression model seemed to be overfitting, we decided to use a random forest classifier model next. The first step in our random forest classifier model was to import the RandomForestClassifier from sklearn and train the data. This was also, originally performed on the unscaled data, which returned a training score of 1.0 and a testing score 0.9942. These scores were also erroneously high, leading us to believe once again the model was overfitting. 
+The next model used was a random forest classifier model. The first step in our random forest classifier model was to import the RandomForestClassifier from sklearn and train the data. This was also, originally performed on the unscaled data, which returned a training score of 1.0 and a testing score 0.9942.
 
 Our next step, to once again, account for overfitting involved sclaing the data. This was done by importing StandardScaler from sklearn and scaling the data to give us both X_train_scaled and X_test_scaled values. The model was then ran once more resulting in training and testing scores of 1.0 and 0.9942 respectively. 
 
 ## Refining
 
-After reviewing both models, and observing each significantly overfitting, we decided to refine our approach in hopes of improving each model's training and testing scores.
+After reviewing both models, we decided to refine our approach in hopes of improving each model's training and testing scores.
 
-Our first step in refining involved removing additional unnecessary features. These additional features included Crtitic_Count and User_Count. These were removed as their mean values were much larger than the rest of the features in the dataset. The models were both ran again resulting in lower but similar overfitting training and testing values.
+Our first step in refining involved removing additional unnecessary features. These additional features included Crtitic_Count and User_Count. These were removed as their mean values were much larger than the rest of the features in the dataset. The models were both ran again resulting in lower but similar training and testing values.
 
-Our second step in refining included normalizing the data. This was done by importing Normalizer from sklearn and transforming the X values. Once normalized, both models were ran again resulting in, again lower but similar overfitting training and testing values...
+Our second step in refining included normalizing the data. This was done by importing Normalizer from sklearn and transforming the X values. Once normalized, both models were ran again resulting in, again lower but similar training and testing values.
 
 ## Considerations
 
-While we could not achieve meaningful predictive power with either model, we did step away with significant considerations. 
+After completing and refining both models, we stepped away with significant considerations. 
 
 The first being that perhaps a feature other than global sales may have produced better predictive power. Features such as Critic Score or User Score, that can have a fairly large effect on whether a game is bought or played, and thus considered a "hit."
 
